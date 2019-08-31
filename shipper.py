@@ -25,7 +25,7 @@ try:
     server.sendmail(from_addr, to_adrrs, message.as_string())
     server.quit()
 except:
-    print('Something went wrong')
+    print('Algo deu errado tente novamente')
 else:
     print('Email eviado com sucesso para: ', to_adrrs)
 
