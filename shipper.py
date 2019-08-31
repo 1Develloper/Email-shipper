@@ -17,15 +17,17 @@ message['subject'] = input('Digite o titulo do email: ')
 message['from'] = from_addr
 message['to'] = ''.join(to_adrrs)
 
-
+repeat = int(input('Digite quantas vezes quer enviar o MESMO email: '))
 #Conexão segura com SSL 
 try:
-    server = smtplib.SMTP_SSL(smtp_ssl_host, smtp_ssl_port)
-    server.login(username,password)
-    server.sendmail(from_addr, to_adrrs, message.as_string())
-    server.quit()
+    for x in range(0, repeat):
+        server = smtplib.SMTP_SSL(smtp_ssl_host, smtp_ssl_port)
+        server.login(username,password)
+        server.sendmail(from_addr, to_adrrs, message.as_string())
+        server.quit()
+        print(x, 'Email(s) ja enviados')
 except:
     print('Algo deu errado tente novamente')
 else:
-    print('Email eviado com sucesso para: ', to_adrrs)
+    print(repeat,'Email(s) eviado com sucesso para: ', to_adrrs)
 
