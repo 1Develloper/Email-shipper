@@ -1,3 +1,4 @@
+import getpass
 import smtplib
 from email.mime.text import MIMEText
 #Conexão com os servidores do GOOGLE
@@ -6,7 +7,7 @@ smtp_ssl_port = 465
 
 #Username ou email para logar no servidor
 username = input('Digite seu email: ')
-password = input('Digite sua senha: ')
+password = getpass.getpass('Digite sua senha: ')
 
 from_addr = username
 to_adrrs = [input('Digite o email alvo: ')]
